@@ -1,6 +1,14 @@
 import { Client, GatewayIntentBits, EmbedBuilder } from "discord.js";
 import OpenAI from "openai";
 import dotenv from "dotenv";
+import express from "express";
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Dummy route a Render port scan miatt
+app.get("/", (req, res) => res.send("Mikabot running on Render Web Service"));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 dotenv.config(); // .env betöltése
 
